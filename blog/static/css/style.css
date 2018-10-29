@@ -1,0 +1,132 @@
+html {
+    min-height: 100%;
+    position: relative;
+  }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: #6DCCAA;
+}
+.menu{
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 70px;
+}
+.logo{
+    float: left; 
+    padding-top: 10px;
+    padding-left: 10px;
+       
+}
+.logo img{
+    width: 80%;
+    height: 80%;
+}
+.opciones{
+    float: right;
+    padding-right: 40%;
+    padding-top: 20px; 
+}
+.opciones a{
+    color: #fff;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+.opciones a:hover{
+    text-decoration: underline;
+}
+.carrusel{
+    margin: auto;
+    width: 100%;
+}
+.carrusel img{
+    display: block;
+    /* height: 40%; */
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contacto{
+    width: 100%;
+    height: 70px;
+    padding-top: 40px;
+}
+#telefono{
+    float: left;
+    font-weight: bold;
+    color: white;
+}
+#eslogan{
+    
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+#rrss{
+    float: right;
+    color:  #6DCCAA;
+}
+.fa{
+    color: white;
+}
+.material-icons{
+    color: white;
+}
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.facebook{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    /* display: inline-block; */
+}
+.circle:before {
+    content: ' \25CF';
+    font-size: 50px;
+    color: white;
+  }
+section{
+    /* padding-top: 40px;
+    padding-bottom: 20px; */
+    width: 100%;
+    height: 100%;
+}
+section h1 {
+    font-size: 20px;
+}
+
+section h2 {
+    font-size: 10px;
+}
+.izquierda{
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: right;
+  }
+.derecha{
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+.derecha img{
+    width: 350px;
+}
+footer {
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: black;
+  }

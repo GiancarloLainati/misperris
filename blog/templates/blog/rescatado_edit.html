@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load widget_tweaks %}
+ 
+{% block content %}
+<h1>Agregar Rescatado</h1>
+<form method="POST" class="rescatado" enctype="multipart/form-data">{% csrf_token %}
+    <p>
+        <label for="fotografia">Fotografía:</label>
+        {{ form.fotografia }}
+    </p>
+    <p>
+        <label for="nombre">Nombre:</label>
+        {{ form.nombre }}
+    </p>
+    <p>
+        <label for="raza">Raza:</label>
+        {{ form.raza }}
+    </p>
+    <p>
+        <label for="descripcion">Descripción:</label>
+        {{ form.descripcion }}
+    </p>
+    <p>
+        <label for="estado">Estado:</label>
+        {{ form.estado|add_class:"browser-default" }}
+    </p>
+    
+    <button class="btn waves-effect waves-light" type="submit" name="action">Grabar
+            <i class="material-icons right">send</i>
+    </button>
+</form>
+{% endblock %}

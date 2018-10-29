@@ -1,0 +1,77 @@
+{% extends 'blog/base.html' %}
+
+<div class="row">
+        <div class="row"></div>
+        <h1 class="center">Formulario de Postulación</h1>
+        <div class="col s10 m2 l2"></div>
+        <div class="center col s12 m8 l8" id="rrss">
+            <form method="post" action="exito.html">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>	
+            
+          
+
+            <div class="row col s12 l12">
+                    <div class="input-field col s8 l8">
+                        <input id="run" type="number" class="validate" required>
+                        <label for="run">Run</label>
+                    </div>
+                    <div class="input-field col s4 l4">
+                        <input id="dv" type="text" class="validate" required>
+                        <label for="dv">DV</label>
+                    </div>
+                </div>	
+                
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="nombrecompleto" type="text" class="validate" required>
+                            <label for="nombrecompleto">Nombre Completo</label>
+                        </div>
+                    </div>
+
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" class="datepicker" required>
+                            <label for="datepicker">Fecha de Nacimiento</label>
+                        </div>
+                    </div>	
+                <div class="row">
+                        <div class="input-field col s12">
+                            <input id="phone" type="number" class="validate" required>
+                            <label for="phone">Teléfono</label>
+                        </div>
+                </div>  
+
+            <div class="row">
+                    <div class="input-field col s12">
+                    <select id="regiones" class="browser-default" required></select>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="input-field col s12">
+                    <select id="comunas" class="browser-default" required></select>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="tipovivienda" class="browser-default" required>
+                            <option selected="true" value="">Seleccione Tipo Vivienda</option>
+                            <option value="">---------</option>
+                            <option value="Casa con patio grande">Casa con patio grande</option>
+                            <option value="Casa con patio pequeño">Casa con patio pequeño</option>
+                            <option value="Casa sin patio">Casa sin patio</option>
+                            <option value="Departamento">Departamento</option>
+                    </select>
+                </div>
+            </div>
+            <input class="waves-effect waves-light btn" type="submit" value="Enviar">
+    </form>	
+        </div>
+        <div class="col s12 m2 l2"></div>
+        <div class="row"></div>
+    </div>

@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="rescatado">
+        <h1>{{ rescatado.nombre }}</h1>
+        <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
+        <h2>{{ rescatado.raza }}</h2>
+        <h3>{{ rescatado.estado }}</h3>
+        <p>{{ rescatado.descripcion|linebreaksbr }}</p>
+        <a class="waves-effect waves-light btn" href="{% url 'rescatado_edit' pk=rescatado.pk %}">Editar</a>
+        <a class="waves-effect waves-light btn" href="{% url 'rescatado_delete' pk=rescatado.pk %}">Eliminar</a>
+    </div>
+{% endblock %}

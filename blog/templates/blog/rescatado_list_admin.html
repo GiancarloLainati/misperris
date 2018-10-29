@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <br>
+    <h3>Agregar Rescatado</h3>
+    <a href="{% url 'rescatado_new' %}" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> 
+    <h3>Lista de Rescatados Disponibles</h3>
+    <hr>
+    {% for rescatado in rescatados %}
+        <div>
+            <h3><a href="{% url 'rescatado_detail' pk=rescatado.pk %}">{{ rescatado.nombre }}</a></h3>
+            <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
+        </div>
+    {% endfor %}
+{% endblock %}

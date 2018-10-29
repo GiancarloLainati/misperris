@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    {% for rescatado in rescatados %}
+        <div>
+            <h1><a href="{% url 'rescatado_detail' pk=rescatado.pk %}">{{ rescatado.nombre }}</a></h1>
+            <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
+        </div>
+    {% endfor %}
+{% endblock %}

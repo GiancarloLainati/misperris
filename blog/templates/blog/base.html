@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fundación MIS PERRIS</title>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="{% static "css/materialize.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/footer.css" %}">
+    <link rel="stylesheet" href="{% static "css/lightgallery.css" %}">
+    
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
+</head>
+<body>
+    <header>
+        <div class="col xl12">
+            <nav class="teal accent-3">
+                <div class="nav-wrapper">
+                        <a href="{% url 'index' %}" class="brand-logo"><img class="responsive-img" src="{% static "img/logo.png" %}" alt="MIS PERRIS"></a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="{% url 'index' %}">Inicio</a></li>
+                            <li><a href="#">Quienes Somos</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                            <li><a href="{% url 'rescatado_list' %}">Rescatados</a></li>
+                            <li><a href="#">Registrarse</a></li>
+                        </ul>
+                </div>
+            </nav>
+
+            <div class="collection hide-on-large-only">
+                <a href="{% url 'index' %}" class="center collection-item active teal accent-3">Inicio</a>
+                <a href="#" class="center collection-item active teal accent-3">Quienes Somos</a>
+                <a href="#" class="center collection-item active teal accent-3">Servicios</a>
+                <a href="#" class="center collection-item active teal accent-3">Contáctanos</a>
+                <a href="{% url 'rescatado_list' %}" class="center collection-item active teal accent-3">Rescatados</a>
+                <a href="#" class="center collection-item active teal accent-3">Registrarse</a>
+            </div>
+
+            
+        
+            
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col l12">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer grey">
+        <div class="row">
+            <div class="col s1 l1">
+
+                </div>
+                <div class="col s10 l10">
+                    Desarrollo Web y Mobile
+                </div>
+                <div class="col s1 l1">
+        
+            </div>
+        </div>
+        
+    </footer>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="{% static "js/lightgallery.min.js" %}"></script>
+    <!-- lightgallery plugins -->
+    <script src="{% static "js/lg-thumbnail.min.js" %}"></script>
+    <script src="{% static "js/lg-fullscreen.min.js" %}"></script>
+    <script>
+    lightGallery(document.getElementById('captions')); 
+    </script>
+    <script src="{% static "js/materialize.min.js" %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems,{
+            dist: -100,
+            fullWidth: true,
+            indicators: true,
+            shift: 0,
+            padding: 0,
+            noWrap: false
+        });
+        setInterval(function(){ instances[0].next(); }, 3500);
+        });
+
+        
+        
+
+    </script>
+
+    
+    </body>
+    </html>

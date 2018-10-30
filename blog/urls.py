@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^rescatados/(?P<pk>[0-9]+)/edit/$', views.rescatado_edit, name='rescatado_edit'),
     url(r'^rescatados/(?P<pk>[0-9]+)/delete/$', views.rescatado_delete, name='rescatado_delete'),
     url(r'^signup/$', views.signup, name='signup'),
+    url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^login/$', views.login_view, name='login'),
     #path('abc', views.CrearRescatadoView.as_view(), name='abc')
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

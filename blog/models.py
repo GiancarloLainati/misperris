@@ -30,9 +30,3 @@ class Rescatado(models.Model):
 
     def __str__(self):
         return self.nombre
-
-class Formulario(models.Model):
-    email = models.EmailField()
-    run = models.IntegerField(primary_key=True)
-    dv = models.CharField(max_length=1)
-    nombre = models.CharField(max_length=50)

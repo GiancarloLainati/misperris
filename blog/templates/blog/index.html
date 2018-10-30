@@ -32,7 +32,12 @@
                             <li><a href="#">Servicios</a></li>
                             <li><a href="#">Contáctanos</a></li>
                             <li><a href="{% url 'rescatado_list' %}">Rescatados</a></li>
-                            <li><a href="#">Registrarse</a></li>
+                            {% if user.is_authenticated %}
+                            <li>Bienvenido {{ user.username }}</li>       
+                            <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
+                            {% else %}
+                            <li><a href="{% url 'signup' %}">Registrarse</a></li>
+                            {% endif %}
                         </ul>
                 </div>
             </nav>
@@ -43,7 +48,13 @@
                 <a href="#" class="center collection-item active teal accent-3">Servicios</a>
                 <a href="#" class="center collection-item active teal accent-3">Contáctanos</a>
                 <a href="{% url 'rescatado_list' %}" class="center collection-item active teal accent-3">Rescatados</a>
-                <a href="#" class="center collection-item active teal accent-3">Registrarse</a>
+                {% if user.is_authenticated %}
+                <a class="center collection-item active teal accent-3">Bienvenido {{ user.username }}</a>
+                <a href="{% url 'logout' %}" class="center collection-item active teal accent-3">Cerrar Sesión</a>       
+                {% else %}
+                <a href="{% url 'signup' %}" class="center collection-item active teal accent-3">Registrarse</a>
+                {% endif %}
+                
             </div>
 
             

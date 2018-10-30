@@ -12,7 +12,6 @@ class RescatadoForm(forms.ModelForm):
         fields = ('fotografia', 'nombre', 'raza', 'descripcion', 'estado',)
     
 class SignUpForm(UserCreationForm):
-    usuario = forms.CharField(max_length=40, required=True, help_text='Requerido.')
     nombre = forms.CharField(max_length=30, required=False, help_text='Opcional.')
     apellido = forms.CharField(max_length=30, required=False, help_text='Opcional.')
     email = forms.EmailField(max_length=254, help_text='Requerido. Ingrese una dirección de correo válida.')
@@ -24,4 +23,4 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('usuario', 'nombre', 'apellido', 'email', 'password1', 'password2', )
+        fields = ('username', 'nombre', 'apellido', 'email', 'password1', 'password2', )

@@ -3,6 +3,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -14,7 +15,7 @@ urlpatterns = [
     url(r'^rescatados/(?P<pk>[0-9]+)/delete/$', views.rescatado_delete, name='rescatado_delete'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^logout/$', views.logout_view, name='logout'),
-    url(r'^login/$', views.login_view, name='login'),
+    url(r'^login/$', auth_views.LoginView, name='login'),
     #path('abc', views.CrearRescatadoView.as_view(), name='abc')
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -75,6 +75,3 @@ def signup(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
-
-def login_view(request):
-    return render(request, 'blog/login.html', {})

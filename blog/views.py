@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 from .forms import RescatadoForm
 from django.views.generic import CreateView
 from misperris import settings
+from django.contrib.auth import login, authenticate
+from .forms import SignUpForm
 
 # Create your views here.
 
@@ -55,4 +57,18 @@ def rescatado_delete(request, pk):
     rescatado.delete()
     return render(request, 'blog/exito_delete.html')
 
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, 'blog/signup.html', {'form': form})
 

@@ -11,7 +11,8 @@ urlpatterns = [
       name='rescatado_detail'), 
     url(r'^rescatados/new/$', views.rescatado_new, name='rescatado_new'),
     url(r'^rescatados/(?P<pk>[0-9]+)/edit/$', views.rescatado_edit, name='rescatado_edit'),
-    url(r'^rescatados/(?P<pk>[0-9]+)/delete/$', views.rescatado_delete, name='rescatado_delete')
+    url(r'^rescatados/(?P<pk>[0-9]+)/delete/$', views.rescatado_delete, name='rescatado_delete'),
+    url(r'^signup/$', views.signup, name='signup'),
     #path('abc', views.CrearRescatadoView.as_view(), name='abc')
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -127,3 +127,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'dwy@mftec.cl'
+
+EMAIL_HOST_PASSWORD = 'lala123.-'
+
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'Team misperris <noreply@misperris.com>'

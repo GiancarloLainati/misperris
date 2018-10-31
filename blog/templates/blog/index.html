@@ -36,7 +36,7 @@
                             <li>Bienvenido {{ user.username }}</li>       
                             <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>
                             {% else %}
-                            <li><a href="{% url 'signup' %}">Registrarse</a></li>
+                            <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
                             {% endif %}
                         </ul>
                 </div>
@@ -52,7 +52,7 @@
                 <a class="center collection-item active teal accent-3">Bienvenido {{ user.username }}</a>
                 <a href="{% url 'logout' %}" class="center collection-item active teal accent-3">Cerrar Sesión</a>       
                 {% else %}
-                <a href="{% url 'signup' %}" class="center collection-item active teal accent-3">Registrarse</a>
+                <a href="{% url 'login' %}" class="center collection-item active teal accent-3">Iniciar Sesión</a>
                 {% endif %}
                 
             </div>

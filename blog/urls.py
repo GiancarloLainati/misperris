@@ -16,6 +16,5 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^logout/$', views.logout_view, name='logout'),
     url(r'^login/$', auth_views.LoginView, name='login'),
-    #path('abc', views.CrearRescatadoView.as_view(), name='abc')
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

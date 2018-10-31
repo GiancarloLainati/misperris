@@ -1,9 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    {% for rescatado in rescatados %}
-        <div>
-            <h1><a href="#">{{ rescatado.nombre }}</a></h1>
-            <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
-        </div>
-    {% endfor %}
+   {% if user.is_authenticated %}
+       {% for rescatado in rescatados %}
+           <div>
+               <h1><a href="#">{{ rescatado.nombre }}</a></h1>
+               <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
+           </div>
+       {% endfor %}
+   {% else %}
+       <br>
+       <br>
+       <h5>
+       Para ver a los rescatados disponibles debes iniciar sesión. Puedes ingresar <a href="{% url 'login' %}">aquí</a>.
+       </h5>
+   {% endif %}
 {% endblock %}

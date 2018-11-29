@@ -1,7 +1,9 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
+{% load pwa %}
 <head>
+    {% progressive_web_app_meta %}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Fundación MIS PERRIS</title>
@@ -14,8 +16,6 @@
     <link rel="stylesheet" href="{% static "css/materialize.min.css" %}">
     <link rel="stylesheet" href="{% static "css/footer.css" %}">
     <link rel="stylesheet" href="{% static "css/lightgallery.css" %}">
-    
-
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    
@@ -34,7 +34,7 @@
                             <li><a href="{% url 'rescatado_list' %}">Rescatados</a></li>
                             {% if user.is_authenticated %}
                             <li>Bienvenido {{ user.username }}</li>       
-                            <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li>       
+                            <li><a href="/account/logout">Cerrar Sesión</a></li>       
                             {% else %}
                             <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
                             {% endif %}
@@ -88,29 +88,6 @@
     <!-- lightgallery plugins -->
     <script src="{% static "js/lg-thumbnail.min.js" %}"></script>
     <script src="{% static "js/lg-fullscreen.min.js" %}"></script>
-    <script>
-    lightGallery(document.getElementById('captions')); 
-    </script>
     <script src="{% static "js/materialize.min.js" %}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.carousel');
-        var instances = M.Carousel.init(elems,{
-            dist: -100,
-            fullWidth: true,
-            indicators: true,
-            shift: 0,
-            padding: 0,
-            noWrap: false
-        });
-        setInterval(function(){ instances[0].next(); }, 3500);
-        });
-
-        
-        
-
-    </script>
-
-    
     </body>
     </html>

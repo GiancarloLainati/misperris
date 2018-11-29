@@ -7,11 +7,18 @@ from django.views.generic import CreateView
 from misperris import settings
 from django.contrib.auth import login, authenticate, logout
 from .forms import SignUpForm
+from blog.quickstart import serializers
+from django.template.loader import get_template
+from django.http import HttpResponse
+import json
 
 # Create your views here.
 
 def index(request):
     return render(request, 'blog/index.html', {})
+
+def base_layout(request):
+    return render(request, 'blog/base.html', {})
 
 def rescatado_list(request):
     user = request.user
@@ -75,3 +82,8 @@ def signup(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+def charcha_serviceworker(request, js):
+    template = get_template('charcha-serviceworker.js')
+    html = template.render()
+    return HttpResponse(html, content_type="application/x-javascript")

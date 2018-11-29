@@ -2,7 +2,7 @@
 {% block content %}
    {% if user.is_authenticated %}
        {% for rescatado in rescatados %}
-           <div>
+           <div class="Rescatado">
                <h1><a href="#">{{ rescatado.nombre }}</a></h1>
                <img class="responsive-img" src="{{ rescatado.fotografia.url }}" alt="">
            </div>
